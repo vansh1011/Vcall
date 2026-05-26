@@ -212,7 +212,7 @@ export default function Call() {
     <div className="min-h-screen relative bg-black">
       <video ref={remoteRef} autoPlay playsInline className="w-full h-screen object-cover" />
       <video ref={localRef} autoPlay playsInline muted
-        className="absolute bottom-6 right-6 w-40 h-28 md:w-56 md:h-40 object-cover rounded-xl border border-white/20 shadow-2xl" />
+        className="absolute top-6 md:bottom-6 md:top-auto right-6 w-40 h-28 md:w-56 md:h-40 object-cover rounded-xl border border-white/20 shadow-2xl" />
 
       <div className="absolute top-6 left-6 glass rounded-full px-4 py-2 text-sm">{status}</div>
 
