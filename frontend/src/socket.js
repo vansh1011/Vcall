@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
-import { API } from "./api";
-export const socket = io(API, {
+
+export const socket = io("/", {
   withCredentials: true,
-  autoConnect: true,
+  path: "/api/socket.io",
   transports: ["websocket", "polling"],
 });
