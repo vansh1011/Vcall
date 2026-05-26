@@ -62,7 +62,7 @@ export default function Call() {
     return stream;
   };
 
-  // Outgoing
+
   useEffect(() => {
     if (!state?.outgoing) return;
     (async () => {
@@ -81,10 +81,10 @@ export default function Call() {
         nav("/");
       }
     })();
-    // eslint-disable-next-line
+    
   }, []);
 
-  // Socket listeners
+ 
   useEffect(() => {
     const onOffer = (data) => {
       if (state?.outgoing) return;
@@ -119,7 +119,7 @@ export default function Call() {
       socket.off("call-rejected", onRejected);
       socket.off("end-call", onEnd);
     };
-    // eslint-disable-next-line
+    
   }, []);
 
   const accept = async () => {
