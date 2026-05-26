@@ -39,7 +39,7 @@ app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// ----- Passport -----
+
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
@@ -66,7 +66,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// ----- Routes -----
+
 app.post("/register", async (req, res) => {
   const { username, password } = req.body || {};
   if (!username || !password) return res.status(400).json({ error: "Missing fields" });
@@ -111,12 +111,12 @@ app.post("/logout", (req, res) => {
 
 app.get("/", (_req, res) => res.send("Vcall backend up"));
 
-// ----- Socket.io -----
+
 const io = new Server(server, {
   cors: { origin: FRONTURL, credentials: true },
 });
 
-const onlineUsers = {}; // { username: socketId }
+const onlineUsers = {}; 
 
 io.on("connection", (socket) => {
   socket.on("register", (username) => {
